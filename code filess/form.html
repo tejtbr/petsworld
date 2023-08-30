@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+        
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 600px) {
+            .col-25,
+            .col-75,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .img {
+            width: 200px;
+            height: 35px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            background-color: #fdfffd;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+        }
+        
+        .nav-links {
+            position: absolute;
+            right: 0;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 0, 0);
+        }
+        
+        .nav-links a:hover {
+            color: black;
+        }
+        /* LOGO */
+        
+        .logo {
+            width: 250px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            left: 4vh;
+            top: 2vh;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+        
+        .menu li:hover {
+            background-color: gold;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            color: white;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+        }
+        /* DROPDOWN MENU */
+        
+        .services {
+            position: relative;
+        }
+        
+        .dropdown {
+            padding: 1em 0;
+            position: absolute;
+            /*WITH RESPECT TO PARENT*/
+            display: none;
+            border-radius: 8px;
+            top: 35px;
+            background-color: rgba(255, 217, 0, 0.603));
+        }
+        
+        .dropdown li+li {
+            margin-top: 10px;
+        }
+        
+        .dropdown li {
+            padding: 0.5em 1em;
+            width: 8em;
+            text-align: center;
+        }
+        
+        .dropdown li:hover {
+            background-color: #ffffff;
+        }
+        
+        .services:hover .dropdown {
+            display: block;
+        }
+        
+        .menu .current {
+            background-color: rgba(255, 217, 0, 0.507);
+            border-radius: 10px;
+        }
+        
+        input[type=checkbox] {
+            display: none;
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+            color: black;
+        }
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                width: auto;
+                right: 0;
+                left: -90vw;
+                top: 7vw;
+                text-align: center;
+                padding: 10px 0;
+                background-color: rgb(255, 250, 250);
+                box-shadow: 5px 5px 15px rgb(0, 0, 0);
+                font-size: 2.8vw;
+            }
+            .menu a:hover {
+                display: inline-block;
+                background-color: gold;
+                transition: 0.3s ease;
+            }
+            .menu li+li {
+                margin-top: 12px;
+            }
+            input[type=checkbox]:checked~.menu {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .dropdown {
+                right: 50%;
+                top: 30px;
+                transform: translateX(35%);
+            }
+            .dropdown li:hover {
+                background-color: gold;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position:absolute;top:0;">
+        <div class="navbar">
+
+            <img class="img" src="project_20211231_1802130-01 (1).png"></img>
+
+            <ul class="nav-links">
+
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+                <div class="menu">
+                    <li style="width:0;height:0px;"></li>
+                    <li><a href="home.html">home</a></li>
+                    <li class="services">
+                        <a href="info.html">info</a>
+
+                    </li>
+                    <li class="current"><a href="index.html">adopt a pet</a></li>
+                    <li><a href="blog3.html">blogs</a></li>
+                    <li><a href="loginpage.html">login</a></li>
+
+                    <li><a href="about us.html">about us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <center>
+            <h2 style="font-size:5vw;font-family: Arial, Helvetica, sans-serif;">Fill the form</h2>
+            <p>
+                <h1>Do fill the form to write blog</h1>
+            </p>
+        </center>
+    </div>
+
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">your Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">email</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">bread</label>
+                </div>
+                <div class="col-75">
+                    <select id="country" name="country">
+          <option value="australia">Labrador Retrievers</option>
+          <option value="canada">German Shepherds</option>
+          <option value="usa">Golden Retrievers</option>
+        </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">heading 1</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">discription</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">heading 2</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">discription</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">heading 3</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">discription</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">upload a photo1</label>
+                </div>
+                <div class="col-75">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">upload a photo2</label>
+                </div>
+                <div class="col-75">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">upload a photo3</label>
+                </div>
+                <div class="col-75">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

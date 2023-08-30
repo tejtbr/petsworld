@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .img {
+            width: 200px;
+            height: 35px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            background-color: #fbfffd;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+        }
+        
+        .nav-links {
+            position: absolute;
+            right: 0;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 0, 0);
+        }
+        
+        .nav-links a:hover {
+            color: black;
+        }
+        /* LOGO */
+        
+        .logo {
+            width: 250px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            left: 4vh;
+            top: 2vh;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+        
+        .menu li:hover {
+            background-color: gold;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            color: white;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+        }
+        /* DROPDOWN MENU */
+        
+        .services {
+            position: relative;
+        }
+        
+        .dropdown {
+            padding: 1em 0;
+            position: absolute;
+            /*WITH RESPECT TO PARENT*/
+            display: none;
+            border-radius: 8px;
+            top: 35px;
+            background-color: rgba(255, 217, 0, 0.603));
+        }
+        
+        .dropdown li+li {
+            margin-top: 10px;
+        }
+        
+        .dropdown li {
+            padding: 0.5em 1em;
+            width: 8em;
+            text-align: center;
+        }
+        
+        .dropdown li:hover {
+            background-color: #ffffff;
+        }
+        
+        .services:hover .dropdown {
+            display: block;
+        }
+        
+        .menu .current {
+            background-color: rgba(255, 217, 0, 0.507);
+            border-radius: 10px;
+        }
+        
+        input[type=checkbox] {
+            display: none;
+        }
+        /*HAMBURGER MENU*/
+        
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+            color: black;
+        }
+        /* APPLYING MEDIA QUERIES */
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                width: auto;
+                right: 0;
+                left: -90vw;
+                text-align: center;
+                padding: 10px 0;
+                background-color: rgb(255, 250, 250);
+                box-shadow: 5px 5px 15px rgb(0, 0, 0);
+                font-size: 2.8vw;
+                color: white;
+            }
+            .menu a:hover {
+                display: inline-block;
+                background-color: gold;
+                transition: 0.3s ease;
+            }
+            .menu li+li {
+                margin-top: 12px;
+                color: white;
+            }
+            input[type=checkbox]:checked~.menu {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .dropdown {
+                right: 50%;
+                top: 30px;
+                transform: translateX(35%);
+            }
+            .dropdown li:hover {
+                background-color: gold;
+            }
+        }
+        
+        .div1 {
+            background-image: url('fantasy.jpg');
+            width: 100%;
+            height: 35vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .div12 {
+            padding: 13vw;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 4vw;
+            color: white;
+        }
+        
+        .div2 {
+            padding: 10vw;
+            font-family: sans-serif;
+            line-height: 3rem;
+            font-size: 3vh;
+        }
+        
+        .head {
+            width: 100%;
+            height: auto;
+            font-size: 5vh;
+            font-family: arial;
+            border-bottom: 2px solid black;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 220px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- LOGO -->
+        <img class="img" src="project_20211231_1802130-01 (1).png"></img>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li style="width:0;height:0px;"></li>
+                <li><a href="home.html">home</a></li>
+                <li>
+                    <a href="info.html">info</a></li>
+                <li class="current"><a href="blog3.html">blogs</a></li>
+
+
+                <li><a href="about us.html">about us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </div>
+        </ul>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+
+    <div class="div1" id="home">
+        <div style="background-color:rgba(0, 0, 0, 0.473);">
+            <div class="div12">
+                <center>Tips To Keep Your Animals Happy And Healthy</center>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="div2">
+        Whether you've got dogs or cats or other types of animals, you know how much joy they can bring to your life. Essentially, members of your family, you want to do all you can to keep them healthy and happy. If you want to ensure tails are constantly wagging
+        and you are being loved by your furry friends, here are some excellent tips to make their lives as fantastic as possible. </br>
+
+        </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Feed High-Quality Food
+        </div>
+        </br>
+        </br>
+        Just like you, your animals want to have food to eat that is of the highest quality. Though some pet food, especially high-end foods, can be somewhat expensive, try to feed your animals food that is known for being healthy. By going with name brands rather
+        than store brands, you should be able to give your animals the vitamins and other nutrients they need. </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Schedule Regular Vet Visits
+        </div>
+        </br>
+        </br>
+        No matter what types of animals you have, they need to have a schedule of regular vet visits to stay happy and healthy. Although your animals may not always enjoy making their trip to the veterinarian, doing so will be vital to maintaining their health.
+        By having regular checkups and examinations, your vet can often find and correct small health issues before they develop into something much more serious.</br>
+        </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Give Them Plenty of Exercises
+        </div>
+        </br>
+        </br>
+        Whether it's taking your dog to a nearby park, spending some quality time with your kitty as it chases balls here and there, or perhaps riding down a trail on your favorite horse, giving your animals plenty of exercises will help them feel good physically
+        and mentally. Just like humans, animals need to let off some steam now and then, so running around in a park or elsewhere can be just what they need to relax.
+        </br>
+        </br>
+
+
+        <div class="head">
+            Spend Time With Them Natural grooming
+        </div>
+        </br>
+        </br>
+        Finally, even though you lead a busy life, always take some time now and then to just sit down and spend some quality time with your pet. Even if it's only for a few minutes after you've had a tough day at the office, petting your dog or cat, grooming
+        your horse, or even watching your favorite gerbil on their exercise wheel will let them know you care and love having them as part of your life. </br>
+        </br>
+        </br>
+
+
+
+    </div>
+
+    <div class="footer">
+        <h2>pets world</h2>
+        </br>
+        <div style="width:100%;height:2px;background-color:rgb(255, 255, 255);"></div>
+
+        </br>
+        <b>contact:</b>
+        </br>
+        phone : 7975577162</br>
+        gmail : tejtbr@gmail.com
+
+
+    </div>
+
+
+</body>
+
+</html>

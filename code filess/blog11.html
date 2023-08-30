@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .img {
+            width: 200px;
+            height: 35px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            background-color: #ffffff;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+        }
+        
+        .nav-links {
+            position: absolute;
+            right: 0;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 0, 0);
+        }
+        
+        .nav-links a:hover {
+            color: black;
+        }
+        /* LOGO */
+        
+        .logo {
+            width: 250px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            left: 4vh;
+            top: 2vh;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+        
+        .menu li:hover {
+            background-color: gold;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            color: white;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+        }
+        /* DROPDOWN MENU */
+        
+        .services {
+            position: relative;
+        }
+        
+        .dropdown {
+            padding: 1em 0;
+            position: absolute;
+            /*WITH RESPECT TO PARENT*/
+            display: none;
+            border-radius: 8px;
+            top: 35px;
+            background-color: rgba(255, 217, 0, 0.603));
+        }
+        
+        .dropdown li+li {
+            margin-top: 10px;
+        }
+        
+        .dropdown li {
+            padding: 0.5em 1em;
+            width: 8em;
+            text-align: center;
+        }
+        
+        .dropdown li:hover {
+            background-color: #ffffff;
+        }
+        
+        .services:hover .dropdown {
+            display: block;
+        }
+        
+        .menu .current {
+            background-color: rgba(255, 217, 0, 0.507);
+            border-radius: 10px;
+        }
+        
+        input[type=checkbox] {
+            display: none;
+        }
+        /*HAMBURGER MENU*/
+        
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+            color: black;
+        }
+        /* APPLYING MEDIA QUERIES */
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                width: auto;
+                right: 0;
+                left: -90vw;
+                text-align: center;
+                padding: 10px 0;
+                background-color: rgb(255, 250, 250);
+                box-shadow: 5px 5px 15px rgb(0, 0, 0);
+                font-size: 2.8vw;
+                color: white;
+            }
+            .menu a:hover {
+                display: inline-block;
+                background-color: gold;
+                transition: 0.3s ease;
+            }
+            .menu li+li {
+                margin-top: 12px;
+                color: white;
+            }
+            input[type=checkbox]:checked~.menu {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .dropdown {
+                right: 50%;
+                top: 30px;
+                transform: translateX(35%);
+            }
+            .dropdown li:hover {
+                background-color: gold;
+            }
+        }
+        
+        .div1 {
+            background-image: url('saas.jpg');
+            width: 100%;
+            height: 35vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .div12 {
+            padding: 10.7vw;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 4vw;
+            color: white;
+        }
+        
+        .div2 {
+            padding: 10vw;
+            font-family: sans-serif;
+            line-height: 3rem;
+            font-size: 3vh;
+        }
+        
+        .head {
+            width: 100%;
+            height: auto;
+            font-size: 5vh;
+            font-family: arial;
+            border-bottom: 2px solid black;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 220px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- LOGO -->
+        <img class="img" src="project_20211231_1802130-01 (1).png"></img>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li style="width:0;height:0px;"></li>
+                <li><a href="home.html">home</a></li>
+                <li>
+                    <a href="info.html">info</a></li>
+                <li class="current"><a href="blog3.html">blogs</a></li>
+
+
+                <li><a href="about us.html">about us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </div>
+        </ul>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+
+    <div class="div1" id="home">
+        <div style="background-color:rgba(0, 0, 0, 0.473);">
+            <div class="div12">
+                <center>3 Ways to Ensure That You Can Take Your Pet with You to Senior Living</center>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="div2">
+        Seniors and pets are a match made in heaven. With an empty nest and plenty of free time after retirement, pets provide older adults with the companionship and diversion they often need. This, in turn, benefits the former in terms of love and security.
+        Not only that, but pet ownership has also been known to help seniors overcome loneliness and depression and decrease stress, as well as increase physical activity, lower blood pressure, and boost the immune system. However, as you transition from
+        your home to assisted living and other similar arrangements, you may find yourself concerned with the fate of your beloved pet. Thankfully, gone are the days when seniors had to be parted from their cherished companions. In fact, humans and their
+        furry friends living side by side in assisted living communities is already becoming the norm these days.
+        </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Read the Fine Print
+        </div>
+        </br>
+        </br>
+        It’s definitely a welcome change in the realm of senior living arrangements that pets are now being accepted with open arms. With a good number of assisted living communities now allowing — even encouraging — pet ownership, it’s now so much easier to
+        find pet-friendly facilities. This, however, depends on your particular area, so it’s a good idea to do your research and maybe even cast a wider net to know your options. While you may initially plan to look at some of the communities in the
+        San Francisco area, don’t overlook checking surrounding cities too. You may even find a better price or a more pet-friendly neighborhood.</br>
+        </br>
+        It’s definitely a welcome change in the realm of senior living arrangements that pets are now being accepted with open arms. With a good number of assisted living communities now allowing — even encouraging — pet ownership, it’s now so much easier to
+        find pet-friendly facilities. This, however, depends on your particular area, so it’s a good idea to do your research and maybe even cast a wider net to know your options. While you may initially plan to look at some of the communities in the
+        San Francisco area, don’t overlook checking surrounding cities too. You may even find a better price or a more pet-friendly neighborhood.
+        </br>
+        </br>You’ll also need to carefully consider your budget and how much you can afford to spend each month on assisted living. If you don’t have long-term care insurance, you’ll likely have to dig into your savings or use the proceeds from selling your
+        home. To estimate how much you’ll earn from a home sale, be sure to account for fees, taxes, and how much equity you have.
+
+
+
+
+        </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Get the Right Setup
+        </div>
+        </br>
+        </br>
+        Of course, moving to a community could mean less space that both you and your pet are used to, so there will need to be some adjustments. Not only that, as your mobility changes, you also want to ensure you can care for and clean up after your pet without
+        undue physical exertion on your part. To that end, it’s a good idea to set up a proper area for your pet and stock it with the right supplies such as a comfy dog bed, like the memory foam option from P.L.A.Y., as well as plenty of food and treats.</br>
+        </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Don’t Be Afraid to Get Help
+
+        </div>
+        </br>
+        </br>
+        Finally, know that there’s always support available for you and your pet. Bear in mind that the assistance you receive in assisted living doesn’t necessarily extend to your pet, so it’s important to find services you can leverage as the need arises. These
+        can run the gamut from financial advising to having a vet who makes house calls on your speed dial is also a good idea. You can even plan to have friends and family members take care of your pet if you travel or get sick, or consider a professional
+        pet care service in a pinch. Indeed, having such a support system will not only be vital to you but to your pet, as well.
+        </br>
+        </br>
+        Suffice it to say, pet-friendly senior living is no longer a pipe dream but a legitimate reality for you and your cherished furry family member. Start by doing your due diligence and considering the many options available, so you and your pet can continue
+        to enjoy each other’s compa
+    </div>
+
+    <div class="footer">
+        <h2>pets world</h2>
+        </br>
+        <div style="width:100%;height:2px;background-color:rgb(255, 255, 255);"></div>
+
+        </br>
+        <b>contact:</b>
+        </br>
+        phone : 7975577162</br>
+        gmail : tejtbr@gmail.com
+
+
+    </div>
+
+
+</body>
+
+</html>

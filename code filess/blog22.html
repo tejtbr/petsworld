@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .img {
+            width: 200px;
+            height: 35px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            background-color: #ffffff;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+        }
+        
+        .nav-links {
+            position: absolute;
+            right: 0;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 0, 0);
+        }
+        
+        .nav-links a:hover {
+            color: black;
+        }
+        /* LOGO */
+        
+        .logo {
+            width: 250px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            left: 4vh;
+            top: 2vh;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+        
+        .menu li:hover {
+            background-color: gold;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            color: white;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+        }
+        /* DROPDOWN MENU */
+        
+        .services {
+            position: relative;
+        }
+        
+        .dropdown {
+            padding: 1em 0;
+            position: absolute;
+            /*WITH RESPECT TO PARENT*/
+            display: none;
+            border-radius: 8px;
+            top: 35px;
+            background-color: rgba(255, 217, 0, 0.603));
+        }
+        
+        .dropdown li+li {
+            margin-top: 10px;
+        }
+        
+        .dropdown li {
+            padding: 0.5em 1em;
+            width: 8em;
+            text-align: center;
+        }
+        
+        .dropdown li:hover {
+            background-color: #ffffff;
+        }
+        
+        .services:hover .dropdown {
+            display: block;
+        }
+        
+        .menu .current {
+            background-color: rgba(255, 217, 0, 0.507);
+            border-radius: 10px;
+        }
+        
+        input[type=checkbox] {
+            display: none;
+        }
+        /*HAMBURGER MENU*/
+        
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+            color: black;
+        }
+        /* APPLYING MEDIA QUERIES */
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                width: auto;
+                right: 0;
+                left: -90vw;
+                text-align: center;
+                padding: 10px 0;
+                background-color: rgb(255, 250, 250);
+                box-shadow: 5px 5px 15px rgb(0, 0, 0);
+                font-size: 2.8vw;
+                color: white;
+            }
+            .menu a:hover {
+                display: inline-block;
+                background-color: gold;
+                transition: 0.3s ease;
+            }
+            .menu li+li {
+                margin-top: 12px;
+                color: white;
+            }
+            input[type=checkbox]:checked~.menu {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .dropdown {
+                right: 50%;
+                top: 30px;
+                transform: translateX(35%);
+            }
+            .dropdown li:hover {
+                background-color: gold;
+            }
+        }
+        
+        .div1 {
+            background-image: url('qq1.jpg');
+            width: 100%;
+            height: 35vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .div12 {
+            padding: 13vw;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 4vw;
+            color: white;
+        }
+        
+        .div2 {
+            padding: 10vw;
+            font-family: sans-serif;
+            line-height: 3rem;
+            font-size: 3vh;
+        }
+        
+        .head {
+            width: 100%;
+            height: auto;
+            font-size: 5vh;
+            font-family: arial;
+            border-bottom: 2px solid black;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 220px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- LOGO -->
+        <img class="img" src="project_20211231_1802130-01 (1).png"></img>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li style="width:0;height:0px;"></li>
+                <li><a href="home.html">home</a></li>
+                <li>
+                    <a href="info.html">info</a></li>
+                <li class="current"><a href="blog3.html">blogs</a></li>
+
+
+                <li><a href="about us.html">about us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </div>
+        </ul>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+
+    <div class="div1" id="home">
+        <div style="background-color:rgba(0, 0, 0, 0.473);">
+            <div class="div12">
+                <center>The Essentials of Natural Pet Care</center>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="div2">
+        If you’ve ever owned a pet, chances are you’ve already encountered and made some choices about natural care. Natural pet care is different from traditional veterinary medicine. It typically does not involve the use of drugs or chemicals. Instead, it emphasizes
+        natural therapies and the prevention of illness through diet, exercise, supplements and dental hygiene. </br>
+        </br>
+        And now natural health is becoming more popular as people try to live cleaner, more conscious lives for themselves. Naturally, they want their pets to have this lifestyle too! This article will explore natural pet care — from organic CBD products to proper
+        exercise — so your furry friend can thrive on a natural diet without any antibiotics or hormones.
+        </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Avoid chemicals and drugs
+        </div>
+        </br>
+        </br>
+        Natural remedies can be just as effective as modern veterinary medicine. In addition, they can save you and your pet a lot of unnecessary trouble. For example, a natural alternative to potentially toxic flea and tick preventatives are natural oils and
+        drops you apply to your pet’s skin. These are great because the oils are natural insect repellants, so all you have to do is apply them after a bath.
+        </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Natural diets for natural pets
+        </div>
+        </br>
+        </br>
+        If you want to go natural, it’s essential to ensure that your pet is eating natural food as well. Remember: cats are carnivores, and dogs are omnivores. There are many ways you can do this, including raw food diets, high-quality commercial foods, and
+        more. Looking for foods that make use of high-quality protein sources, include human-grade ingredients, and focus on organic are all a good bet. It’s also important to note that if your dog or cat is on any medication, natural or not, it’s essential
+        to double-check with your vet before making any sudden diet changes.</br>
+        </br>
+        </br>
+        </br>
+
+        <div class="head">
+            Supplements for natural health
+        </div>
+        </br>
+        </br>
+        Diet isn’t the only way that you can ensure natural pet care. Supplements are a natural way of ensuring that your pet is getting everything they need. For example, Omega-3 is important for dogs because it’s an anti-inflammatory, natural pain reliever
+        and natural heart health supplement. For cats, it ensures healthy skin, natural fat metabolism, brain functions and more! And omega 3 isn’t the only natural supplement available for pets. There are many others that you can give your pet to ensure
+        healthy natural care.
+        </br>
+        </br>
+        Take CBD, for example. This popular trend isn’t just for humans anymore! Companies are racing to make pet CBD options available for the furkids of the household. As a natural supplement, CBD is designed to help pets feel calm and relaxed, without any
+
+        </br>
+        </br>
+
+        <div class="head">
+            Natural grooming
+        </div>
+        </br>
+        </br>
+        Like humans, natural pet care involves regular grooming to keep your furry friend healthy and feeling good. It’s essential not to use commercial shampoos or other personal care products designed for humans. Although they may smell natural, many fragrances
+        are made from sources that might not be great for pets. Instead, stick to the ones made specifically for them and avoid dealing with any issues. Seek out organic ingredients and, for susceptible dogs, scent-free formulas.</br>
+        </br>
+        </br>
+        </br>
+
+
+        <div class="head">
+            Exercise and mental stimulation
+
+        </div>
+        </br>
+        </br>
+        Part of the trend toward natural pet care involves an emphasis on prevention rather than treatment. However, nothing keeps a pet healthier than proper exercise and mental stimulation. This means not just physical health, but also mental health is important.
+        They’re both vital for your pet’s health because, without them, they can develop severe health conditions like obesity and depression.</br>
+        </br>
+        </br>
+        </br>
+        Light, natural play exercise is a great way to exercise for both cats and dogs. Keep your pet on a routine schedule to ensure they get plenty of light exercise and play every day. And remember to spend lots of time with them because it’s not only fun
+        for you but a natural mood enhancer for them. This includes senior pets who will also benefit from the same physical and mental activity, just at lower intensities and shorter intervals.
+        </br>
+        </br>
+        </br>
+    </div>
+
+    <div class="footer">
+        <h2>pets world</h2>
+        </br>
+        <div style="width:100%;height:2px;background-color:rgb(255, 255, 255);"></div>
+
+        </br>
+        <b>contact:</b>
+        </br>
+        phone : 7975577162</br>
+        gmail : tejtbr@gmail.com
+
+
+    </div>
+
+
+</body>
+
+</html>

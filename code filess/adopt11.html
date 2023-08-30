@@ -1,0 +1,474 @@
+<html>
+
+<head>
+    <title>adoption</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .img {
+            width: 200px;
+            height: 35px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            background-color: #fdfffd;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+        }
+        
+        .nav-links {
+            position: absolute;
+            right: 0;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 0, 0);
+        }
+        
+        .nav-links a:hover {
+            color: black;
+        }
+        /* LOGO */
+        
+        .logo {
+            width: 250px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            left: 4vh;
+            top: 2vh;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+        
+        .menu li:hover {
+            background-color: gold;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            color: white;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+        }
+        /* DROPDOWN MENU */
+        
+        .services {
+            position: relative;
+        }
+        
+        .dropdown {
+            padding: 1em 0;
+            position: absolute;
+            /*WITH RESPECT TO PARENT*/
+            display: none;
+            border-radius: 8px;
+            top: 35px;
+            background-color: rgba(255, 217, 0, 0.603));
+        }
+        
+        .dropdown li+li {
+            margin-top: 10px;
+        }
+        
+        .dropdown li {
+            padding: 0.5em 1em;
+            width: 8em;
+            text-align: center;
+        }
+        
+        .dropdown li:hover {
+            background-color: #ffffff;
+        }
+        
+        .services:hover .dropdown {
+            display: block;
+        }
+        
+        .menu .current {
+            background-color: rgba(255, 217, 0, 0.507);
+            border-radius: 10px;
+        }
+        
+        input[type=checkbox] {
+            display: none;
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+            color: black;
+        }
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                width: auto;
+                right: 0;
+                left: -90vw;
+                top: 7vw;
+                text-align: center;
+                padding: 10px 0;
+                background-color: rgb(255, 250, 250);
+                box-shadow: 5px 5px 15px rgb(0, 0, 0);
+                font-size: 2.8vw;
+            }
+            .menu a:hover {
+                display: inline-block;
+                background-color: gold;
+                transition: 0.3s ease;
+            }
+            .menu li+li {
+                margin-top: 12px;
+            }
+            input[type=checkbox]:checked~.menu {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .dropdown {
+                right: 50%;
+                top: 30px;
+                transform: translateX(35%);
+            }
+            .dropdown li:hover {
+                background-color: gold;
+            }
+        }
+        
+        .footer {
+            width: 100%;
+            height: 220px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 50px;
+        }
+        
+        .div1 {
+            width: 30%;
+            height: 70vh;
+            position: absolute;
+            top: 7vw;
+            left: 2vw;
+            background-image: url('gfg.jpg');
+            background-size: cover;
+            border: 3px solid black;
+            border-radius: 6px;
+            padding: 20px 60px 30px 40px;
+            box-shadow: 5px 5px 10px rgb(0, 0, 0);
+        }
+        
+        .div2 {
+            width: 50%;
+            height: 70vh;
+            position: absolute;
+            top: 7vw;
+            right: 2vw;
+            background-size: cover;
+            border-radius: 6px;
+            padding: 20px 60px 30px 40px;
+            box-shadow: 5px 5px 10px rgb(0, 0, 0);
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .div3 {
+            width: 80%;
+            height: 60px;
+            background-color: rgba(211, 210, 210, 0.726);
+            border-bottom: 2px solid black;
+            padding: 4px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+body{
+  display: flex;
+
+}
+.container{
+  max-width: 800px;
+  position:absolute;
+  top:100vh;
+  left:22vw;
+  background: #fff;
+  width: 800px;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.container .text{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container form{
+  padding: 30px 0 0 0;
+}
+.container form .form-row{
+  display: flex;
+  margin: 32px 0;
+}
+form .form-row .input-data{
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+form .form-row .textarea{
+  height: 70px;
+}
+.input-data input,
+.textarea textarea{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0,0,0, 0.12);
+}
+.input-data input:focus ~ label, .textarea textarea:focus ~ label,
+.input-data input:valid ~ label, .textarea textarea:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #3498db;
+}
+.textarea textarea{
+  resize: none;
+  padding-top: 10px;
+}
+.input-data label{
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.textarea label{
+  width: 100%;
+  bottom: 40px;
+  background: #fff;
+}
+.input-data .underline{
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #4d4d4d;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before{
+  transform: scale(1);
+}
+.submit-btn .input-data{
+  overflow: hidden;
+  height: 45px!important;
+  width: 25%!important;
+}
+.submit-btn .input-data .inner{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: black;
+  transition: all 0.4s;
+}
+.submit-btn .input-data:hover .inner{
+  left: 0;
+}
+.submit-btn .input-data input{
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 700px) {
+  .container .text{
+    font-size: 30px;
+  }
+  .container form{
+    padding: 10px 0 0 0;
+  }
+  .container form .form-row{
+    display: block;
+  }
+  form .form-row .input-data{
+    margin: 35px 0!important;
+  }
+  .submit-btn .input-data{
+    width: 40%!important;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+
+        <img class="img" src="project_20211231_1802130-01 (1).png"></img>
+
+        <ul class="nav-links">
+
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+            <div class="menu">
+                <li style="width:0;height:0px;"></li>
+                <li><a href="home.html">home</a></li>
+                <li class="services">
+                    <a href="info.html">info</a>
+
+                </li>
+                <li class="current"><a href="index.html">adopt a pet</a></li>
+                <li><a href="blog3.html">blogs</a></li>
+                <li><a href="loginpage.html">login</a></li>
+
+                <li><a href="about us.html">about us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </div>
+        </ul>
+    </div>
+    <div class="div4">
+        <div class="div1">
+            no : 001
+        </div>
+        <div class="div2">
+            <div class="div3">
+                date os arrival :</br>
+                </br>
+                03/01/2022
+
+
+            </div>
+            </br>
+            <div class="div3">
+                location :</br>
+                </br>
+                655 N. Mojave Road Las Vegas, Nevada 89101
+
+            </div>
+            </br>
+            <div class="div3">
+                primary color :</br>
+                </br>
+                brown
+
+            </div>
+            </br>
+            <div class="div3">
+                weight :</br>
+                </br>
+                10kg
+
+
+            </div>
+            </br>
+            <div class="div3">
+                status :</br>
+                </br>
+                normal
+
+            </div>
+            </br>
+
+
+            <div class="div3">
+                pet id :</br>
+                </br>
+                001
+
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="text">send a message to this owner to adopt this pet</div>
+            <form action="#">
+              <div class="form-row">
+                <div class="input-data">
+                  <input type="text" required>
+                  <div class="underline"></div>
+                  <label for="">Name</label>
+                </div>
+                <div class="input-data">
+                  <input type="text" required>
+                  <div class="underline"></div>
+                  <label for="">Phone number</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="input-data">
+                  <input type="text" required>
+                  <div class="underline"></div>
+                  <label for="">Email Address</label>
+                </div>
+                <div class="input-data">
+                  <input type="text" required>
+                  <div class="underline"></div>
+                  <label for="">pin code</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="input-data textarea">
+                  <textarea rows="8" cols="80" required></textarea>
+                  <div class="underline"></div>
+                  <label for="">type your address</label>
+                </div>
+              </div>
+              <div class="form-row submit-btn">
+                <div class="input-data">
+                  <div class="inner"></div>
+                  <input type="submit" value="submit">
+                </div>
+              </div>
+            </form>
+          </div>
+    </div>
+</br>
+</br>
+</br>
+
+</body>
+
+</html>

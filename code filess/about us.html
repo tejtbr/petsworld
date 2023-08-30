@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        a {
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .img {
+            width: 200px;
+            height: 35px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            background-color: #fbfffd;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+        }
+        
+        .nav-links {
+            position: absolute;
+            right: 0;
+        }
+        
+        .nav-links a {
+            color: rgb(0, 0, 0);
+        }
+        
+        .nav-links a:hover {
+            color: black;
+        }
+        /* LOGO */
+        
+        .logo {
+            width: 250px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            left: 4vh;
+            top: 2vh;
+        }
+        /* NAVBAR MENU */
+        
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+        
+        .menu li:hover {
+            background-color: gold;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            color: white;
+        }
+        
+        .menu li {
+            padding: 5px 14px;
+        }
+        /* DROPDOWN MENU */
+        
+        .services {
+            position: relative;
+        }
+        
+        .dropdown {
+            padding: 1em 0;
+            position: absolute;
+            /*WITH RESPECT TO PARENT*/
+            display: none;
+            border-radius: 8px;
+            top: 35px;
+            background-color: rgba(255, 217, 0, 0.603));
+        }
+        
+        .dropdown li+li {
+            margin-top: 10px;
+        }
+        
+        .dropdown li {
+            padding: 0.5em 1em;
+            width: 8em;
+            text-align: center;
+        }
+        
+        .dropdown li:hover {
+            background-color: #ffffff;
+        }
+        
+        .services:hover .dropdown {
+            display: block;
+        }
+        
+        .menu .current {
+            background-color: rgba(255, 217, 0, 0.507);
+            border-radius: 10px;
+        }
+        
+        input[type=checkbox] {
+            display: none;
+        }
+        /*HAMBURGER MENU*/
+        
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+            color: black;
+        }
+        /* APPLYING MEDIA QUERIES */
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                position: absolute;
+                width: auto;
+                right: 0;
+                left: -90vw;
+                text-align: center;
+                padding: 10px 0;
+                background-color: rgb(255, 255, 255);
+                box-shadow: 5px 5px 15px rgb(0, 0, 0);
+                font-size: 2.6vw;
+            }
+            .menu a:hover {
+                display: inline-block;
+                background-color: gold;
+                transition: 0.3s ease;
+            }
+            .menu li+li {
+                margin-top: 12px;
+            }
+            input[type=checkbox]:checked~.menu {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .dropdown {
+                right: 50%;
+                top: 30px;
+                transform: translateX(35%);
+            }
+            .dropdown li:hover {
+                background-color: gold;
+            }
+        }
+        
+        .row {
+            padding: 0vw;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        
+        html {
+            box-sizing: border-box;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        .column {
+            float: left;
+            width: 28vw;
+            margin-bottom: 30px;
+            padding: 0 10vw;
+            height: auto;
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+            width: 25vw;
+            height: auto;
+        }
+        
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-image: url('triangles-3320452.png');
+            color: white;
+        }
+        
+        .container {
+            padding: 0 16px;
+        }
+        
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .title {
+            color: grey;
+        }
+        
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .button:hover {
+            background-color: #555;
+        }
+        
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+            .row {
+                padding: 5vw;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+            }
+            html {
+                box-sizing: border-box;
+            }
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
+            .column {
+                float: left;
+                width: 100%;
+                margin-bottom: 30px;
+                padding: 0 vw;
+                height: auto;
+            }
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                margin: 8px;
+                width: 100%;
+                height: auto;
+            }
+            .about-section {
+                padding: 50px;
+                text-align: center;
+                background-image: url('triangles-3320452.png');
+                color: white;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .container::after,
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            .title {
+                color: grey;
+            }
+            .button {
+                border: none;
+                outline: 0;
+                display: inline-block;
+                padding: 8px;
+                color: white;
+                background-color: #000;
+                text-align: center;
+                cursor: pointer;
+                width: 100%;
+            }
+            .button:hover {
+                background-color: #555;
+            }
+        }
+        
+        .footer {
+            width: 100%;
+            height: 220px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 50px;
+        }
+    </style>
+    <title>about us</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- LOGO -->
+        <img class="img" src="project_20211231_1802130-01 (1).png"></img>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+
+                <li style="width:0;height:0px;"></li>
+                <li><a href="home.html">home</a></li>
+
+                <li class="services">
+                    <a href="info.html">info</a>
+
+                </li>
+                <li><a href="index.html">adopt a pet</a></li>
+                <li><a href="blog3.html">blogs</a></li>
+                <li><a href="loginpage.html">login</a></li>
+
+                <li class="current"><a href="about us.html">about us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="about-section">
+        <h1>pet lovers</h1>
+        <p></p>
+        <p>“The greatness of a nation and its moral progress can be judged by the way its animals are treated.”</p>
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="sau.jpeg" alt="Jane" style="width:100%">
+                <div class="container">
+                    <h2>saurav</h2>
+                    <p class="title">devoloper</p>
+                    <p>one of our Designer</p>
+                    <p>jane@example.com</p>
+                    <p><a href="contact.html"><button class="button">Contact</button></a></p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="column">
+                <div class="card">
+                    <img src="WhatsApp Image 2021-11-29 at 6.29.28 AM.jpeg" alt="Mike" style="width:100%">
+                    <div class="container">
+                        <h2>faizan</h2>
+                        <p class="title">Art Director</p>
+                        <p>one of our Designer</p>
+                        <p>mike@example.com</p>
+                        <p><a href="contact.html"><button class="button">Contact</button></a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="WhatsApp Image 2022-01-07 at 2.46.24 AM.jpeg" alt="John" style="width:100%">
+                    <div class="container">
+                        <h2>siddagouda</h2>
+                        <p class="title">Designer</p>
+                        <p>one of our Designer</p>
+                        <p>john@example.com</p>
+                        <p><a href="contact.html"><button class="button">Contact</button></a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="column">
+            <div class="card">
+                <img src="20210930_143101[1] copy.jpg" alt="John" style="width:100%">
+                <div class="container">
+                    <h2>tejas</h2>
+                    <p class="title">devoloper</p>
+                    <p>one of our Designer</p>
+                    <p>john@example.com</p>
+                    <p><a href="contact.html"><button class="button">Contact</button></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>pets world</h2>
+        </br>
+        <div style="width:100%;height:2px;background-color:rgb(255, 255, 255);"></div>
+
+        </br>
+        <b>contact:</b>
+        </br>
+        phone : 7975577162</br>
+        gmail : tejtbr@gmail.com
+
+
+    </div>
+</body>
+
+</html>
